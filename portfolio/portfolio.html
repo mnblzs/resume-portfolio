@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>刘积铭 · 项目作品集</title>
+<style>
+  /* Screen styles */
+  :root{
+    --ink:#1a1f2c;
+    --muted:#5a6478;
+    --line:#e3e6ed;
+    --accent:#0a4d8c;
+    --accent-soft:#e8f0fa;
+    --bg:#f5f7fb;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:32px 24px 80px;}
+  header.cover{
+    background:linear-gradient(135deg, #0a4d8c 0%, #1a6fc0 100%);
+    color:#fff;
+    padding:36px 40px;
+    border-radius:14px;
+    box-shadow:0 8px 28px rgba(10,77,140,.18);
+    margin-bottom:28px;
+  }
+  header.cover h1{margin:0 0 8px;font-size:30px;letter-spacing:1px;}
+  header.cover .sub{font-size:14px;opacity:.92;line-height:1.9;}
+  header.cover .tags{margin-top:14px;}
+  header.cover .tag{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:4px 10px;border-radius:20px;font-size:12px;margin-right:6px;margin-top:4px;}
+  h2{
+    font-size:20px;
+    color:var(--accent);
+    border-left:4px solid var(--accent);
+    padding:6px 0 6px 12px;
+    margin:34px 0 14px;
+  }
+  h3{font-size:16px;margin:18px 0 8px;color:#1a1f2c;}
+  .meta{color:var(--muted);font-size:13px;margin-bottom:6px;}
+  .role{color:var(--accent);font-weight:600;font-size:15px;margin-left:6px;}
+  section.project{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 26px 18px;
+    margin-bottom:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.03);
+  }
+  ul{margin:8px 0 4px 18px;padding:0;}
+  ul li{margin:5px 0;}
+  .ach{color:var(--accent);font-weight:600;}
+  strong{color:var(--accent);}
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:10px;
+    margin:14px 0 6px;
+  }
+  .gallery.gallery-2{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .gallery.gallery-4{grid-template-columns:repeat(4, minmax(0, 1fr));}
+  .gallery figure{margin:0;text-align:center;min-width:0;overflow:hidden;}
+  .gallery img{
+    width:100%;
+    max-width:100%;
+    height:160px;
+    object-fit:contain;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:#fafbfd;
+    box-sizing:border-box;
+  }
+  .gallery figcaption{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4;}
+  .overview{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 24px;
+    margin-bottom:18px;
+    box-shadow:0 2px 8px rgba(0,0,0,.03);
+  }
+  .overview p{margin:6px 0 14px;color:var(--muted);font-size:14px;line-height:1.85;}
+  .index-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .index-item{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:#fafbfd;}
+  .index-item .idx{font-size:18px;font-weight:700;color:var(--accent);min-width:28px;text-align:center;}
+  .index-item .it-body{display:flex;flex-direction:column;}
+  .index-item b{font-size:14px;color:var(--ink);font-weight:600;}
+  .index-item span{font-size:12px;color:var(--muted);margin-top:2px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .card-item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:13px;
+  }
+  .card-item b{color:var(--accent);display:block;margin-bottom:4px;}
+  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .skill-item{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:13px;}
+  .skill-item b{color:var(--accent);display:block;margin-bottom:4px;}
+  .award-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px;font-size:13px;}
+  .award-grid div::before{content:"• ";color:var(--accent);font-weight:bold;}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;}
+
+  /* Print / PDF — make pages flow like the HTML, no half-empty pages */
+  @page{size:A4;margin:12mm 12mm 14mm 12mm;}
+  @media print{
+    body{background:#fff;}
+    .wrap{max-width:100%;padding:0;}
+    header.cover{
+      box-shadow:none;border-radius:0;
+      padding:16px 20px;margin-bottom:10px;
+      page-break-after:avoid;
+    }
+    .overview{
+      box-shadow:none;border-radius:0;
+      padding:12px 16px;margin-bottom:8px;
+      page-break-inside:avoid;break-inside:avoid;
+    }
+    /* Keep each project's text + images together on one page */
+    section.project{
+      box-shadow:none;border-radius:0;
+      padding:7px 14px;margin-bottom:5px;
+      break-inside:avoid;page-break-inside:avoid;
+    }
+    /* Force project ① to always start on page 2 (after cover + overview) */
+    section.project:first-of-type{
+      break-before:page;page-break-before:page;
+    }
+    /* Headings stay with following content */
+    h2{page-break-after:avoid;break-after:avoid-page;margin:7px 0 3px;font-size:16px;}
+    h3{page-break-after:avoid;break-after:avoid-page;margin:6px 0 3px;font-size:13.5px;}
+    /* Keep atomic units (figures, list items, cards) from being split mid-element */
+    .gallery figure{
+      break-inside:avoid;page-break-inside:avoid;
+    }
+    .gallery{
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:5px;margin:6px 0 2px;
+    }
+    .gallery.gallery-2{grid-template-columns:repeat(2, minmax(0, 1fr));}
+    .gallery.gallery-4{grid-template-columns:repeat(4, minmax(0, 1fr));}
+    .gallery img{height:56px;max-width:100%;box-sizing:border-box;object-fit:contain;background:#fafbfd;}
+    /* Ensure figures never overflow their cells */
+    .gallery figure{max-width:100%;min-width:0;overflow:hidden;}
+    ul li{break-inside:avoid;page-break-inside:avoid;}
+    .ach{break-inside:avoid;page-break-inside:avoid;}
+    .skill-item,.card-item{break-inside:avoid;page-break-inside:avoid;}
+    .index-item{break-inside:avoid;page-break-inside:avoid;}
+    /* Tighter cards so the school-experience section can fit alongside awards */
+    .skill-item,.card-item{padding:9px 12px;font-size:12.5px;line-height:1.5;}
+    .skill-item b,.card-item b{margin-bottom:3px;font-size:13px;}
+    .award-grid{font-size:12.5px;gap:5px 18px;line-height:1.55;}
+    /* Keep footer attached to the last content page */
+    footer{break-before:avoid;page-break-before:avoid;margin-top:14px;}
+    /* Tighter meta line */
+    .meta{margin-bottom:4px;}
+    .gallery figcaption{font-size:10px;margin-top:2px;}
+    .project ul{margin:3px 0 2px;}
+    .project li{margin:0 0;line-height:1.34;}
+    .project p{margin:3px 0;}
+    /* Slightly tighter body line-height for print */
+    body{line-height:1.38;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <h1>刘积铭 · 项目作品集</h1>
+  <div class="sub">
+    ✉️ 2030146103@qq.com &nbsp;|&nbsp; 📍 深圳<br>
+    🔗 开源合集：<a href="https://oshwhub.com/donnan" style="color:#fff;text-decoration:underline;">oshwhub.com/donnan</a> &nbsp;|&nbsp; 🎓 厦门大学嘉庚学院 · 电气工程
+  </div>
+  <div class="tags">
+    <span class="tag">硬件研发</span>
+    <span class="tag">原理图 / PCB Layout</span>
+    <span class="tag">电源 / 电机驱动</span>
+    <span class="tag">试产导入</span>
+    <span class="tag">技术文档</span>
+  </div>
+</header>
+
+<section class="overview">
+  <h2>作品集概览</h2>
+  <p>本作品集汇总 2 段企业实习经历与 5 个代表性硬件项目，覆盖消费级外骨骼、具身智能机器人、RoboMaster 竞赛机器人、能源 / 储能小车与无刷电机 FOC 驱动器方向，完整呈现从原理图设计、PCB Layout 到调试、试产与量产交付的硬件工程能力。所有实物 / PCB / 3D 渲染图均为本人项目一手素材。</p>
+  <div class="index-grid">
+    <div class="index-item"><span class="idx">01</span><div class="it-body"><b>RoboMaster 步兵机器人</b><span>硬件负责人 · 2023.09 – 2025.09</span></div></div>
+    <div class="index-item"><span class="idx">02</span><div class="it-body"><b>RoboMaster 工程机器人</b><span>硬件负责人 · 2024.09 – 2025.09</span></div></div>
+    <div class="index-item"><span class="idx">03</span><div class="it-body"><b>工训竞赛太阳能小车</b><span>硬件核心成员 · 2024.09 – 2025.06</span></div></div>
+    <div class="index-item"><span class="idx">04</span><div class="it-body"><b>灰度循迹与 IMU 惯性导航小车</b><span>硬件核心开发者 · 2024.05 – 2024.09</span></div></div>
+    <div class="index-item"><span class="idx">05</span><div class="it-body"><b>基于 ODrive 的 FOC 驱动器</b><span>毕业设计 · 2026.01 – 2026.06</span></div></div>
+  </div>
+</section>
+
+<!-- ========== 工作经历 ========== -->
+<section class="project">
+  <h2>工作经历</h2>
+
+  <h3>深圳未来动力科技有限公司 <span class="role">｜ 硬件工程师（实习）</span></h3>
+  <div class="meta">2026.05 – 至今 ｜ 项目：双臂具身智能机器人 + 可移动底盘</div>
+  <ul>
+    <li>负责基于 OpenArm 项目开发的机器人及其衍生型号硬件系统搭建，覆盖主控、电源、传感器接口、线束装配与测试验证全链路，输出硬件设计文档并支撑批量生产。</li>
+    <li>参与机器人 SoC 主控板选型与底板外围硬件设计（对外高速接口、DDR3 等），实现 24V 锂电管理、电流分配与断电制动方案；负责单板转产与量产维护、问题定位。</li>
+    <li>负责具身智能机器人可移动底盘与外骨骼遥操等项目的硬件开发，构建多传感器融合硬件架构，完成 IMU、关节编码器硬件模块设计与深度相机、激光雷达接口电路设计。</li>
+    <li>制定整机线束规范与接插件选型标准，输出装配 SOP；建立硬件测试体系（电源纹波、温升、可靠性）与信号完整性优化，建立产线出货测试并完成小批量生产交付。</li>
+  </ul>
+
+  <h3>深圳市亦方创新科技有限公司 <span class="role">｜ 硬件工程师（实习）</span></h3>
+  <div class="meta">2025.11 – 2026.05 ｜ 项目：<a href="https://vastnaut.com/home">消费级运动下肢外骨骼</a></div>
+  <ul>
+    <li>参与消费级下肢运动外骨骼硬件研发与系统集成，负责无刷关节电机电调模块、IMU 传感器、电机磁编码器等 PCB / FPC 硬件模块开发与优化，参与方案制定到样机制作等关键流程，了解外骨骼设备小型化与轻量化布局需求。</li>
+    <li>协助推动产品由样品进入试量产阶段，输出硬件 BOM 与生产文件，对接 PCB 板厂与供料商并跟进生产流程；编写技术文档与 SOP，确保生产交付符合设计规范。</li>
+    <li>负责单板硬件测试与可靠性测试，参与整机低功耗、效率及信号完整性（SI）等关键性能测试，输出测试报告并推动问题定位，完成硬件风险评估与优化方案攻关。</li>
+  </ul>
+</section>
+
+<!-- ========== 项目 1：RoboMaster 步兵 ========== -->
+<section class="project">
+  <h2>① RoboMaster 步兵机器人 <span class="role">｜ 硬件负责人</span></h2>
+  <div class="meta">2023.09 – 2025.09</div>
+  <p>负责一款竞技类步兵机器人完整硬件系统开发，覆盖电源架构、主控板、PCB 布局、通信网络与控制链路全流程。</p>
+  <h3>核心技术贡献</h3>
+  <ul>
+    <li><b>电源架构</b>：6S 锂电池 + 超级电容模组混合动力系统，满足底盘电机瞬时大功率需求，提升动态响应与稳定性。</li>
+    <li><b>核心模块</b>：基于 STM32F4 的 4 层主控板 + 大功率超级电容管理模块，完成原理图 / PCB 至调试验证；集成 9轴 IMU 与关节磁编码器。</li>
+    <li><b>驱动与通信</b>：电机选型与舵轮 / 全向轮底盘设计；CAN 总线 + 串口构建分布式通信网络。</li>
+    <li><b>系统集成</b>：IMU + 导电滑环实现云台 360° 无限位旋转与自瞄；与软件 / 机械团队联调实现全向移动、视觉追踪与自动发射。</li>
+  </ul>
+  <p class="ach">成果：2024 RoboMaster 机甲大师超级对抗赛 国家级三等奖；2025 RoboMaster 机甲大师超级对抗赛 国家级二等奖</p>
+  <div class="gallery">
+    <figure><img src="imgs/img_01.png" alt="步兵整机"><figcaption>步兵机器人整机</figcaption></figure>
+    <figure><img src="imgs/img_03.png" alt="比赛现场"><figcaption>比赛现场联调</figcaption></figure>
+    <figure><img src="imgs/img_02.png" alt="主控板PCB"><figcaption>4 层主控板 PCB</figcaption></figure>
+    <figure><img src="imgs/img_04.png" alt="线束测试治具"><figcaption>线束测试治具</figcaption></figure>
+    <figure><img src="imgs/img_05.png" alt="机器人电源板"><figcaption>机器人电源板</figcaption></figure>
+  </div>
+</section>
+
+<!-- ========== 项目 2：RoboMaster 工程 ========== -->
+<section class="project">
+  <h2>② RoboMaster 工程机器人 <span class="role">｜ 硬件负责人</span></h2>
+  <div class="meta">2024.09 – 2025.09</div>
+  <p>负责麦克纳姆轮底盘 + 龙门架 + 多自由度机械臂搬运机器人的整机电气系统规划与核心硬件开发。</p>
+  <h3>核心技术贡献</h3>
+  <ul>
+    <li><b>系统架构</b>：主导设计整机电源分配、通信拓扑（CAN / RS485 / 串口）与传感器布局，制定主控 / 执行器 / 外设的电气接口标准。</li>
+    <li><b>核心模块</b>：基于 STM32F407 车载主控板；集成光耦隔离 3 路 NMOS 气泵驱动模块、磁编码器等。</li>
+    <li><b>磁编码器 FOC 驱动器</b>：设计关节磁编码器（3D 渲染见下图），用于关节 / 轮毂电机矢量控制。</li>
+    <li><b>整机控制</b>：电气系统驱动麦轮底盘、龙门架与 4 自由度机械臂；通过负压吸取与遥控实现物体全向抓取 - 转运 - 放置自动化。</li>
+  </ul>
+  <p class="ach">成果：2025 RoboMaster 机甲大师超级对抗赛 国家级二等奖</p>
+  <div class="gallery">
+    <figure><img src="imgs/img_06.png" alt="工程车整车"><figcaption>工程机器人整车</figcaption></figure>
+    <figure><img src="imgs/img_07.png" alt="工程机器人主控"><figcaption>工程机器人主控板</figcaption></figure>
+    <figure><img src="imgs/img_08.png" alt="工程车主控板"><figcaption>车载主控板 PCB</figcaption></figure>
+    <figure><img src="imgs/img_09.png" alt="NMOS气泵驱动"><figcaption>电源 / 气泵驱动</figcaption></figure>
+    <figure><img src="imgs/img_10.png" alt="关节磁编码器"><figcaption>关节磁编码器</figcaption></figure>
+  </div>
+</section>
+
+<!-- ========== 项目 3：太阳能小车 ========== -->
+<section class="project">
+  <h2>③ 工训竞赛太阳能小车 <span class="role">｜ 硬件核心成员</span></h2>
+  <div class="meta">2024.09 – 2025.06</div>
+  <p>设计并制作以太阳能 + 超级电容为储能、智能循迹与场地识别的小车。</p>
+  <h3>核心技术贡献</h3>
+  <ul>
+    <li><b>能源管理</b>：CN3305 充电 IC 对超级电容组进行高效充电 + 被动均衡；Buck-Boost 电路输出稳定电压为控制与驱动供电。</li>
+    <li><b>控制与驱动</b>：主控 STM32F103 + DRV8837 驱动有刷电机。</li>
+    <li><b>功能集成</b>：NFC 读卡与语音模块，实现场地信息识别与语音播报。</li>
+  </ul>
+  <p class="ach">成果：2024 福建省大学生工程训练综合能力竞赛 省级三等奖</p>
+  <div class="gallery gallery-2">
+    <figure><img src="imgs/img_11.png" alt="扩展板"><figcaption>扩展板 PCB</figcaption></figure>
+    <figure><img src="imgs/img_12.png" alt="电容充电电路"><figcaption>电容充电电路</figcaption></figure>
+    <figure><img src="imgs/img_13.png" alt="超级电容模组"><figcaption>超级电容储能模组</figcaption></figure>
+  </div>
+</section>
+
+<!-- ========== 项目 4：循迹小车 ========== -->
+<section class="project">
+  <h2>④ 灰度循迹与 IMU 惯性导航小车 <span class="role">｜ 硬件核心开发者</span></h2>
+  <div class="meta">2024.05 – 2024.09</div>
+  <p>基于 TI MSPM0G3507 的循迹与惯性导航小车硬件系统开发；负责中控核心板、系统扩展板、IMU 等模块的硬件设计。</p>
+  <h3>核心技术贡献</h3>
+  <ul>
+    <li><b>核心板与扩展板设计</b>：参与设计中控核心板，主导开发系统扩展板（集成 DCDC-LDO 电源树、CAN 通信、IMU）。</li>
+    <li><b>最小系统板</b>：以 MSPM0G3507 为核心的硬件基础平台，整合供电、通信与栅极驱动 / 三相全桥驱动电路，作为运动控制与驱动的硬件底层。</li>
+    <li><b>传感与驱动集成</b>：5 路灰度传感器阵列 + 电机 / 驱动选型，实现精准路径识别、惯性导航与闭环运动控制。</li>
+    <li><b>系统调试与优化</b>：完成硬件设计，参与算法参数整定，保障小车在复杂赛道下稳定高速运行。</li>
+  </ul>
+  <p class="ach">成果：2024 全国大学生电子设计竞赛福建赛区 省级一等奖</p>
+  <div class="gallery">
+    <figure><img src="imgs/img_14.png" alt="扩展板3D渲染"><figcaption>扩展板 PCB</figcaption></figure>
+    <figure><img src="imgs/img_15.png" alt="最小系统板"><figcaption>最小系统板（控制核心板）</figcaption></figure>
+    <figure><img src="imgs/img_16.png" alt="最小系统板"><figcaption>最小系统板</figcaption></figure>
+  </div>
+</section>
+
+<!-- ========== 项目 5：FOC 驱动器 ========== -->
+<section class="project">
+  <h2>⑤ 基于 ODrive 的 FOC 驱动器 <span class="role">｜ 毕业设计</span></h2>
+  <div class="meta">2026.01 – 2026.06</div>
+  <p>参考开源方案设计开发无刷电机高性能矢量控制（FOC）驱动器硬件，覆盖控制 / 驱动 / 功率三级架构。</p>
+  <h3>核心技术贡献</h3>
+  <ul>
+    <li><b>架构设计</b>：「STM32F407 控制核心 → DRV8303 栅极驱动 → 6 颗 NMOS 三相全桥」三级功率架构。</li>
+    <li><b>电路设计</b>：12–24V 输入，集成缓启动与过压 / 过流保护；基于 DRV8303 设计栅极驱动，6 颗 NMOS 搭建三相全桥功率电路。</li>
+    <li><b>信号处理</b>：霍尔传感器实现电机位置反馈，结合相电流采样与 CMSIS-DSP 运算实现有感 FOC 实时控制。</li>
+  </ul>
+  <p class="ach">成果：2025.06 大学生创新创业训练计划「基于 FOC 算法的无刷电机智能控制系统」校级立项</p>
+</section>
+
+<!-- ========== 技能 ========== -->
+<h2>⑥ 相关技能</h2>
+<div class="skill-grid">
+  <div class="skill-item"><b>电子理论基础</b>掌握电路分析、数字 / 模拟电子技术等基础课程；熟悉常用电子元件类型、特性与典型应用电路；能阅读英文数据手册。</div>
+  <div class="skill-item"><b>EDA / PCB</b>熟练 Altium Designer、KiCad、嘉立创 EDA；具备 2–8 层板原理图与 Layout 能力；熟悉 DFM / EMC / SI / PI 基础与 PCB 生产工艺。</div>
+  <div class="skill-item"><b>电源与电机</b>具备电源树、锂电管理与大电流配电设计能力；熟悉无刷 FOC 与有刷电机驱动。</div>
+  <div class="skill-item"><b>焊接与测试</b>熟练常用电子元器件焊接操作；熟悉基础电压、波形等测试方法；示波器 / 逻辑分析仪 / 电子负载做纹波 / 温升 / 可靠性 / EMC 验证。</div>
+  <div class="skill-item"><b>嵌入式系统与仿真</b>熟悉 ARM Cortex-M（STM32 / GD32）开发；掌握 Multisim 电路仿真；能配合完成驱动与功能调试。</div>
+  <div class="skill-item"><b>机器人系统</b>熟悉机器人结构、硬件及电控系统开发设计流程；具备跨机械 / 软件 / 算法协同与基础项目管理经验。</div>
+</div>
+
+<!-- ========== 奖项 ========== -->
+<h2>⑦ 在校部分竞赛获奖</h2>
+<div class="award-grid">
+  <div>2025 RoboMaster 机甲大师超级对抗赛全国赛：国家级二等奖</div>
+  <div>2024 RoboMaster 机甲大师超级对抗赛全国赛：国家级三等奖</div>
+  <div>2024 全国大学生电子设计竞赛福建赛区：省级一等奖</div>
+  <div>2025 全国大学生工程实践与创新能力大赛：省级一等奖</div>
+  <div>2024 福建省机器人大赛：省级二等奖</div>
+  <div>2025 全国 3D 大赛精英联赛数字工业赛道：省级一等奖</div>
+  <div>2024–2025 RoboMaster 机甲大师高校联盟赛 3v3：连续两年省级二等奖</div>
+  <div>2025 全国大学生电子设计竞赛福建赛区：省级三等奖</div>
+  <div>2024 福建省大学生工程训练综合能力竞赛：省级三等奖</div>
+  <div>2025.06 大创「基于 FOC 算法的无刷电机智能控制系统」：校级立项</div>
+  <div>2025.06 大创「双向光伏储能电源管理系统」：校级立项</div>
+  <div>挑战杯 / 蓝桥杯 / 软件设计 / 商业计划等多项国 / 省奖</div>
+</div>
+
+<!-- ========== 在校经历 ========== -->
+<h2>⑧ 在校经历</h2>
+<div class="grid-2">
+  <div class="card-item"><b>校 RM 机器人战队 ｜ 硬件组正式队员（2023.06 – 2025.06）</b>作为团队硬件核心成员，参与步兵 / 工程机器人硬件系统规划、开发与迭代；负责供电架构与多种通信链路搭建；与软件 / 机械团队高效协同，硬件系统在高强度赛事中稳定可靠。</div>
+  <div class="card-item"><b>机电院工训协会 ｜ 副部长（2024.09 – 2025.10）</b>统筹组织多场硬件操作培训与工程实践项目，覆盖会员 100+；主导设计「万用表 / 数字电源 / PCB 焊接」基础技能培训课程；可迁移至部门技术能力建设相关工作。</div>
+  <div class="card-item"><b>班级学习委员（2023.06 – 2024.06）</b>负责班级学习事务统筹，建立高效师生沟通机制，组织课后答疑与备考复习小组。</div>
+  <div class="card-item"><b>厦门投洽会组委会 ｜ 联络部实习生（2023.06 – 2023.09）</b>负责成员单位及代表团联络、接待与会议信息传达；统筹处理代表团行程安排与会议资料整理。</div>
+</div>
+
+<footer>本作品集中所有 PCB 实物、3D 渲染与项目现场图片均为本人项目一手素材。</footer>
+
+</div>
+</body>
+</html>
