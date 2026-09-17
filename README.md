@@ -51,13 +51,15 @@ resume-portfolio/
 ├── .gitignore                # 忽略临时文件
 ├── resume/
 │   ├── resume.md             # 简历 Markdown 源文件
-│   └── resume.pdf            # 简历 PDF（影石硬件工程师版）
+│   └── resume.pdf            # 简历 PDF
 └── portfolio/
     ├── portfolio.md          # 作品集 Markdown
     ├── portfolio.html        # 作品集 HTML（用于生成 PDF）
     ├── portfolio.pdf         # 作品集 PDF（含全部图片）
-    └── imgs/                 # 作品集图片（16 张）
-        └── img_01.png ... img_16.png
+    └── imgs/                 # 作品集图片（19 张，统一 400×285）
+        ├── img_01.png ... img_19.png
+        └── full/             # 高清原图（长边 1400，缩略图可点击放大）
+            └── img_17.png ... img_19.png
 ```
 
 ## 使用说明
