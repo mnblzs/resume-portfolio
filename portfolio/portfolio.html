@@ -65,6 +65,11 @@
   }
   .gallery.gallery-2{grid-template-columns:repeat(2, minmax(0, 1fr));}
   .gallery.gallery-4{grid-template-columns:repeat(4, minmax(0, 1fr));}
+  /* 工作成果：一排 1–2 张，图片放大展示 */
+  .gallery.gallery-lg{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .gallery-lg img{height:300px;}
+  .gallery-lg figure:last-child{grid-column:1 / -1;}
+  .gallery-lg figure:last-child img{height:400px;}
   .gallery figure{margin:0;text-align:center;min-width:0;overflow:hidden;}
   .gallery img{
     width:100%;
@@ -147,6 +152,10 @@
     }
     .gallery.gallery-2{grid-template-columns:repeat(2, minmax(0, 1fr));}
     .gallery.gallery-4{grid-template-columns:repeat(4, minmax(0, 1fr));}
+    .gallery.gallery-lg{grid-template-columns:repeat(2, minmax(0, 1fr));}
+    .gallery-lg img{height:150px;}
+    .gallery-lg figure:last-child{grid-column:1 / -1;}
+    .gallery-lg figure:last-child img{height:190px;}
     .gallery img{height:56px;max-width:100%;box-sizing:border-box;object-fit:contain;background:#fafbfd;}
     /* Ensure figures never overflow their cells */
     .gallery figure{max-width:100%;min-width:0;overflow:hidden;}
@@ -218,7 +227,7 @@
   </ul>
 
   <h3>工作成果</h3>
-  <div class="gallery">
+  <div class="gallery gallery-lg">
     <figure><a href="imgs/full/img_17.png"><img src="imgs/img_17.png" alt="整机电源"></a><figcaption>整机电源树与下位机控制</figcaption></figure>
     <figure><a href="imgs/full/img_18.png"><img src="imgs/img_18.png" alt="电池电量显示"></a><figcaption>电量显示 / 功率开关板</figcaption></figure>
     <figure><a href="imgs/full/img_19.png"><img src="imgs/img_19.png" alt="USB3.0信号整形"></a><figcaption>Redriver 整形电路</figcaption></figure>
