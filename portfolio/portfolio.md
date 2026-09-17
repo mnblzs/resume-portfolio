@@ -37,7 +37,7 @@
 
 | 机器人整机电源 + 下位机控制 | 电池电量显示 + 功率开关 | USB 3.0 信号整形 |
 | :---: | :---: | :---: |
-| <a href="imgs/full/img_17.png"><img src="imgs/img_17.png" width="300"></a> | <a href="imgs/full/img_18.png"><img src="imgs/img_18.png" width="300"></a> | <a href="imgs/full/img_19.png"><img src="imgs/img_19.png" width="300"></a> |
+| <a href="imgs/full/img_17.png"><img src="imgs/img_17.png" width="400"></a> | <a href="imgs/full/img_18.png"><img src="imgs/img_18.png" width="400"></a> | <a href="imgs/full/img_19.png"><img src="imgs/img_19.png" width="400"></a> |
 | 整机电源树与下位机控制 | 电量显示 / 功率开关板 | Redriver 整形电路 |
 
 > 以上为缩略预览，点击图片可查看高清原理图。
