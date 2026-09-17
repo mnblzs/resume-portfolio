@@ -57,12 +57,12 @@
 
 | 整机 | 主控板 PCB | 比赛现场联调 |
 | :---: | :---: | :---: |
-| ![](imgs/img_01.png) | ![](imgs/img_02.png) | ![](imgs/img_03.png) |
+| <img src="imgs/img_01.png" width="300"> | <img src="imgs/img_02.png" width="300"> | <img src="imgs/img_03.png" width="300"> |
 | 步兵机器人整机 | 4 层主控板 PCB | 比赛现场调试 |
 
 | 线束测试治具 | 机器人电源板 |
 | :---: | :---: |
-| ![](imgs/img_04.png) | ![](imgs/img_05.png) |
+| <img src="imgs/img_04.png" width="300"> | <img src="imgs/img_05.png" width="300"> |
 | 线束测试治具 | 机器人电源板 |
 
 ---
@@ -82,10 +82,15 @@
 
 ### 实物 / 硬件图
 
-| 工程机器人整车 | 工程机器人主控 | 车载主控板 PCB | NMOS 气泵驱动 / 电源 | 关节磁编码器 |
-| :---: | :---: | :---: | :---: | :---: |
-| ![](imgs/img_06.png) | ![](imgs/img_07.png) | ![](imgs/img_08.png) | ![](imgs/img_09.png) | ![](imgs/img_10.png) |
-| 工程机器人整车 | 工程机器人主控板 | 车载主控板 PCB | 电源 / 气泵驱动 | 关节磁编码器 |
+| 工程机器人整车 | 工程机器人主控板 | 车载主控板 PCB |
+| :---: | :---: | :---: |
+| <img src="imgs/img_06.png" width="300"> | <img src="imgs/img_07.png" width="300"> | <img src="imgs/img_08.png" width="300"> |
+| 工程机器人整车 | 工程机器人主控板 | 车载主控板 PCB |
+
+| NMOS 气泵驱动 / 电源 | 关节磁编码器 |
+| :---: | :---: |
+| <img src="imgs/img_09.png" width="300"> | <img src="imgs/img_10.png" width="300"> |
+| 电源 / 气泵驱动 | 关节磁编码器 |
 
 ---
 
@@ -105,7 +110,7 @@
 
 | 扩展板 | 电容充电电路 | 超级电容模组 |
 | :---: | :---: | :---: |
-| ![](imgs/img_11.png) | ![](imgs/img_12.png) | ![](imgs/img_13.png) |
+| <img src="imgs/img_11.png" width="300"> | <img src="imgs/img_12.png" width="300"> | <img src="imgs/img_13.png" width="300"> |
 | 扩展板 PCB | 电容充电电路 | 超级电容储能模组 |
 
 ---
@@ -127,7 +132,7 @@
 
 | 扩展板 | 最小系统板 | 最小系统板 |
 | :---: | :---: | :---: |
-| ![](imgs/img_14.png) | ![](imgs/img_15.png) | ![](imgs/img_16.png) |
+| <img src="imgs/img_14.png" width="300"> | <img src="imgs/img_15.png" width="300"> | <img src="imgs/img_16.png" width="300"> |
 | 扩展板 PCB | 最小系统板（控制核心板） | 最小系统板 |
 
 ---
